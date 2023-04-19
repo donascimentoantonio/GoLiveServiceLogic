@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoLiveServiceLogic_v2.Domain", "GoLiveServiceLogic_v2.Domain\GoLiveServiceLogic_v2.Domain.csproj", "{390B4A3D-FB15-4C04-94A3-305E39DDFA75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoLiveServiceLogic_v2.Infra.Data", "GoLiveServiceLogic_v2.Infra.Data\GoLiveServiceLogic_v2.Infra.Data.csproj", "{C377CC3E-BC2B-4C8F-B97C-9C80BB434874}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoLiveServiceLogic_v2.Infra.IoC", "GoLiveServiceLogic_v2.Infra.IoC\GoLiveServiceLogic_v2.Infra.IoC.csproj", "{66F5FD7B-8189-4D7B-B7A3-3F9F6C0FECDF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoLiveServiceLogic_v2.Application", "GoLiveServiceLogic_v2.Application\GoLiveServiceLogic_v2.Application.csproj", "{DCD8DB86-78B1-4A92-9D46-F60D2A8D2539}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoLiveServiceLogic_v2.API", "GoLiveServiceLogic_v2.API\GoLiveServiceLogic_v2.API.csproj", "{9649DCA1-4DD2-4A8B-A139-635A473F0E46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{390B4A3D-FB15-4C04-94A3-305E39DDFA75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{390B4A3D-FB15-4C04-94A3-305E39DDFA75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{390B4A3D-FB15-4C04-94A3-305E39DDFA75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{390B4A3D-FB15-4C04-94A3-305E39DDFA75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C377CC3E-BC2B-4C8F-B97C-9C80BB434874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C377CC3E-BC2B-4C8F-B97C-9C80BB434874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C377CC3E-BC2B-4C8F-B97C-9C80BB434874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C377CC3E-BC2B-4C8F-B97C-9C80BB434874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66F5FD7B-8189-4D7B-B7A3-3F9F6C0FECDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66F5FD7B-8189-4D7B-B7A3-3F9F6C0FECDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66F5FD7B-8189-4D7B-B7A3-3F9F6C0FECDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66F5FD7B-8189-4D7B-B7A3-3F9F6C0FECDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCD8DB86-78B1-4A92-9D46-F60D2A8D2539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCD8DB86-78B1-4A92-9D46-F60D2A8D2539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCD8DB86-78B1-4A92-9D46-F60D2A8D2539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCD8DB86-78B1-4A92-9D46-F60D2A8D2539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9649DCA1-4DD2-4A8B-A139-635A473F0E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9649DCA1-4DD2-4A8B-A139-635A473F0E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9649DCA1-4DD2-4A8B-A139-635A473F0E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9649DCA1-4DD2-4A8B-A139-635A473F0E46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {398EC3B4-33E4-4DD2-93C5-BE6627D07A7C}
+	EndGlobalSection
+EndGlobal
