@@ -1,5 +1,6 @@
-﻿using GoLiveServiceLogic_v2.Domain;
-using GoLiveServiceLogic_v2.Domain.Entities;
+﻿using GoLiveServiceLogic_v2.Domain.Entities;
+using GoLiveServiceLogic_v2.Domain.Interfaces;
+using GoLiveServiceLogic_v2.Domain.Interfaces.Base;
 using GoLiveServiceLogic_v2.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;

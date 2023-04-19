@@ -1,4 +1,4 @@
-﻿using GoLiveServiceLogic_v2.Domain;
+﻿using GoLiveServiceLogic_v2.Domain.Interfaces.Base;
 using GoLiveServiceLogic_v2.Infra.Data.Context;
 using System;
 using System.Collections.Generic;

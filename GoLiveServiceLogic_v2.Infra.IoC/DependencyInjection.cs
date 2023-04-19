@@ -1,14 +1,14 @@
-﻿using GoLiveServiceLogic_v2.Domain;
-using GoLiveServiceLogic_v2.Infra.Data.Context;
+﻿using GoLiveServiceLogic_v2.Infra.Data.Context;
 using GoLiveServiceLogic_v2.Application.Mapping;
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using GoLiveServiceLogic_v2.Application.AppServices.Interfaces;
 using GoLiveServiceLogic_v2.Infra.Data.Repositories;
 using GoLiveServiceLogic_v2.Application.AppServices;
+using GoLiveServiceLogic_v2.Domain.Interfaces;
+using GoLiveServiceLogic_v2.Domain.Interfaces.Base;
+using GoLiveServiceLogic_v2.Infra.Data.Dapper;
 
 namespace GoLiveServiceLogic_v2.Infra.IoC
 {
@@ -20,6 +20,7 @@ namespace GoLiveServiceLogic_v2.Infra.IoC
             //local da string de conexão ao banco de dados
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IDapperRepository, DapperRepository>();
             return services;
         }
 

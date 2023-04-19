@@ -2,8 +2,8 @@
 using GoLiveServiceLogic_v2.Application.AppServices.Interfaces;
 using GoLiveServiceLogic_v2.Application.DTO;
 using GoLiveServiceLogic_v2.Application.DTO.Validations;
-using GoLiveServiceLogic_v2.Domain;
 using GoLiveServiceLogic_v2.Domain.Entities;
+using GoLiveServiceLogic_v2.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

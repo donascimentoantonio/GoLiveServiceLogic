@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoLiveServiceLogic_v2.Domain
+namespace GoLiveServiceLogic_v2.Domain.Interfaces.Base
 {
     public interface IBaseRepository
     {
