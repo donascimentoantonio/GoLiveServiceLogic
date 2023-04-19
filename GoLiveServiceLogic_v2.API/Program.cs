@@ -8,6 +8,7 @@ builder.Services.AddControllers();
 //Registrar as injeções de dependencia
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddServices(builder.Configuration);
+builder.Services.AddRepositories(builder.Configuration);
 
 //Para  não retornar atributo nulo dentro de atributo Json nos controllers
 builder.Services.AddMvc().AddJsonOptions(options =>

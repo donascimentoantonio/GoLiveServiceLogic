@@ -19,7 +19,6 @@ namespace GoLiveServiceLogic_v2.Infra.IoC
         {
             //local da string de conexão ao banco de dados
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IDapperRepository, DapperRepository>();
             return services;
         }
@@ -31,6 +30,13 @@ namespace GoLiveServiceLogic_v2.Infra.IoC
             services.AddScoped<IUsuarioService, UsuarioService>();
             return services;
         }
-      
+        public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)
+        {
+
+            //Todos os repositorios criados para as regras de negócio ficarão nesta classe
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            return services;
+        }
+
     }
 }
