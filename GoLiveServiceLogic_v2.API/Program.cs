@@ -10,7 +10,7 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddServices(builder.Configuration);
 builder.Services.AddRepositories(builder.Configuration);
 
-//Para  não retornar atributo nulo dentro de atributo Json nos controllers
+//Para não retornar atributo nulo dentro de atributo Json nos controllers
 builder.Services.AddMvc().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;

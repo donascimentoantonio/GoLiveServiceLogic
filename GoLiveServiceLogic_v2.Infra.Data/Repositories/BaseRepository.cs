@@ -24,13 +24,12 @@ namespace GoLiveServiceLogic_v2.Infra.Data.Repositories
 
         public void DeleteAsync<T>(T entity) where T : class
         {
-
-             _appDbContext.Set<T>().Remove(entity);
+             _appDbContext.Remove(entity);
         }
 
         public void EditAsync<T>(T entity) where T : class
         {
-            _appDbContext.Set<T>().Update(entity);
+            _appDbContext.Update(entity);
         }
 
         public async Task<bool> SaveChanges()

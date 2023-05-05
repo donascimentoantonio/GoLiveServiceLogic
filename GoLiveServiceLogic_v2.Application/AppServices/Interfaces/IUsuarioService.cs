@@ -13,6 +13,6 @@ namespace GoLiveServiceLogic_v2.Application.AppServices.Interfaces
         Task<ResultService> DeleteAsync(int id);
         Task<ResultService<ICollection<UsuarioDto>>> GetAllAsync();
         Task<ResultService<UsuarioDto>> GetByIdAsync(int id);
-        Task<ResultService<UsuarioDto>> PutAsync(int id, UsuarioDto usuarioModel);
+        Task<ResultService> PutAsync(UsuarioDto usuarioDto);
     }
 }

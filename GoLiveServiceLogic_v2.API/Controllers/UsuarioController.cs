@@ -53,11 +53,10 @@ namespace GoLiveServiceLogic_v2.API.Controllers
         }
 
         [HttpPut]
-        [Route("{id}")]
-        public async Task<ActionResult> PutAsync([FromRoute] int id,
-            [FromBody] UsuarioDto usuarioModel)
+        [Route("atualizar")]
+        public async Task<ActionResult> PutAsync([FromBody] UsuarioDto usuarioModel)
         {
-            var result = await _usuarioService.PutAsync(id, usuarioModel);
+            var result = await _usuarioService.PutAsync(usuarioModel);
             if (result.IsSuccess)
             {
                 return Ok(result);
@@ -69,8 +68,8 @@ namespace GoLiveServiceLogic_v2.API.Controllers
         [Route("{id}")]
         public async Task<ActionResult> DeleteAsync([FromRoute] int id)
         {
-            var result =  _usuarioService.DeleteAsync(id);
-            if (result.IsCompleted)
+            var result =  await _usuarioService.DeleteAsync(id);
+            if (result.IsSuccess)
             {
                 return Ok(result);
             }
