@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.Configuration;
 using GoLiveServiceLogic_v2.Application.AppServices.Interfaces;
 using GoLiveServiceLogic_v2.Application.DTO;
 using GoLiveServiceLogic_v2.Application.DTO.Validations;
@@ -39,16 +40,36 @@ namespace GoLiveServiceLogic_v2.Application.AppServices
             var usuario = _mapper.Map<Usuario>(usuarioDto);
 
             //Faz interação com o banco de dados
-             _usuarioRepository.CreateAsync(usuario);
+
+            _usuarioRepository.CreateAsync(usuario);
             await _usuarioRepository.SaveChanges();
 
             return ResultService.Ok<UsuarioDto>(_mapper.Map<UsuarioDto>(usuario));
         }
 
+        public async Task<ResultService> DeleteAsync(int id)
+        {
+            if (id == 0)
+            {
+                return ResultService.Fail("ID não é válido");
+            }
+            var usuarioBanco = await _usuarioRepository.GetByIdAsync(id);
+            if (usuarioBanco == null)
+            {
+                return ResultService.Fail("Usuário não encontrado no banco");
+            }
+
+            _usuarioRepository.DeleteAsync(usuarioBanco);
+            await _usuarioRepository.SaveChanges();
+
+            return ResultService.Ok("Excluído com sucesso");
+
+        }
+
         public async Task<ResultService<ICollection<UsuarioDto>>> GetAllAsync()
         {
             var usuarios = await _usuarioRepository.GetAllAsync();
-            if(!usuarios.Any())
+            if (!usuarios.Any())
                 return ResultService.Fail<ICollection<UsuarioDto>>("Nenhum usuário encontrado");
             else
                 return ResultService.Ok(_mapper.Map<ICollection<UsuarioDto>>(usuarios));
@@ -61,6 +82,28 @@ namespace GoLiveServiceLogic_v2.Application.AppServices
             //fazer essa checagem depois
             if (usuario == null)
                 return ResultService.Fail<UsuarioDto>("Usuário não encontradoo");
+
+            return ResultService.Ok(_mapper.Map<UsuarioDto>(usuario));
+        }
+
+        public async Task<ResultService<UsuarioDto>> PutAsync(int id, UsuarioDto usuarioDto)
+        {
+            if (id == 0)
+                return ResultService.Fail<UsuarioDto>("Id não informado");
+
+            var usuario = await _usuarioRepository.GetByIdAsync(id);
+            if (usuario == null)
+                return ResultService.Fail<UsuarioDto>("Usuário não encontrado");
+
+            var result = new UsuarioDtoValidator().Validate(usuarioDto);
+            if (!result.IsValid)
+                return ResultService.RequestError<UsuarioDto>("As informações colocadas no usuário não são válidas.", result);
+
+            usuarioDto.Id = id;
+            var usuarioSalvar = _mapper.Map<Usuario>(usuarioDto);
+
+            _usuarioRepository.EditAsync(usuarioSalvar);
+            await _usuarioRepository.SaveChanges();
 
             return ResultService.Ok(_mapper.Map<UsuarioDto>(usuario));
         }

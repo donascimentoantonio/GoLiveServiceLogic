@@ -17,7 +17,7 @@ namespace GoLiveServiceLogic_v2.Domain.Entities
         public bool Active { get; set; } = true;
         public DateTime CreateDate { get; set; } = DateTime.Now;
 
-        public Usuario(int id, string name, string email, string job, bool active, DateTime createDate)
+        public Usuario(string name, string email, string job, bool active, DateTime createDate)
         {
             Validation(name, email, job);
             Name = name;
@@ -31,12 +31,12 @@ namespace GoLiveServiceLogic_v2.Domain.Entities
         {
             DomainValidationException.When(Id < 0, "O Id deverá ser maior do que zero");
         }
+        
         private void Validation(string name, string email, string job)
         {
             DomainValidationException.When(string.IsNullOrEmpty(name), "o nome deve ser informado");
             DomainValidationException.When(string.IsNullOrEmpty(email), "o email deve ser informado");
             DomainValidationException.When(string.IsNullOrEmpty(job), "o job deve ser informado");
-
         }
     }
 

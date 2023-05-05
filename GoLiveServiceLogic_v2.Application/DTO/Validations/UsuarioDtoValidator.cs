@@ -21,6 +21,8 @@ namespace GoLiveServiceLogic_v2.Application.DTO.Validations
                 .EmailAddress()
                 .NotNull()
                 .WithMessage("Informe um email válido");
+
+
         }
     }
 }

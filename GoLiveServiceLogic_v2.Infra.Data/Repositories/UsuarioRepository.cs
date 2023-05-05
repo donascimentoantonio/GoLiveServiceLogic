@@ -18,7 +18,10 @@ namespace GoLiveServiceLogic_v2.Infra.Data.Repositories
         {
             return await _appDbContext.Usuarios.ToListAsync();
         }
-        public async Task<Usuario> GetByIdAsync(int id) => await _appDbContext.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<Usuario> GetByIdAsync(int id)
+        {
+            return await _appDbContext.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
+        }
 
         public async Task<IEnumerable<Usuario>> GetByName(string userName)
         {

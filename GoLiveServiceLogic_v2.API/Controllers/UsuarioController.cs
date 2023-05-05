@@ -51,5 +51,31 @@ namespace GoLiveServiceLogic_v2.API.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<ActionResult> PutAsync([FromRoute] int id,
+            [FromBody] UsuarioDto usuarioModel)
+        {
+            var result = await _usuarioService.PutAsync(id, usuarioModel);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<ActionResult> DeleteAsync([FromRoute] int id)
+        {
+            var result =  _usuarioService.DeleteAsync(id);
+            if (result.IsCompleted)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
     }
 }
